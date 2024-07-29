@@ -1,20 +1,17 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Rotas from './src/rotas';
+import {StatusBar, Text} from "react-native"
+import { Tema } from './src/context/contextTheme';
+import { AuthenticatorProvider } from './src/context/contextAuthenticator';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <>
+    {/* <StatusBar barStyle='dark-content'/>   */}
+    <Tema>
+      <AuthenticatorProvider>
+        <Rotas />
+      </AuthenticatorProvider>
+    </Tema>
+    </>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
